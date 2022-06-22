@@ -1,0 +1,41 @@
+const formularioPage = require("../pages/old/formulario_page");
+const mainPage = require("../pages/old/main_page");
+const { I } = inject();
+
+
+Given('app esta aberto', () => {
+    mainPage.mainMenu('Cliques')
+});
+
+
+// Scenario 1
+When('faco swipe down', () => {
+    mainPage.doSwipeDown();
+});
+
+Then('vejo se baixou a tela', () => {
+    I.see('Opção bem escondida')
+});
+
+
+// Scenario 2
+When(/^Acesso "(.*)"/, (menu) => {
+    mainPage.acessoMenu(menu);
+});
+
+When('Preencho o nome', () => {
+    formularioPage.preencheFormulario('Feio Demais')
+});
+
+When('Preencho calendario', () => {
+    formularioPage.preencheCalendario()
+});
+
+When('Preencho resto', () => {
+    formularioPage.preencheTudo()
+});
+
+Then('valido se salvou', () => {
+    formularioPage.validarSalvo()
+});
+

@@ -1,0 +1,35 @@
+{
+    "name": "codeceptjs-tests",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "codeceptjs:ui": "codecept-ui --app",
+        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples",
+        "android": "ENV PLATFORM='Android' ENV='hml2' app='C:\\Users\\DSGI\\TestMobile\\resources\\apk\\CTAppium_2_0.apk' device='emulator' token='xyz123' npx codeceptjs run --features --steps --reporter mocha-multi",
+        "ios": "ENV ENV='hml2' PLATFORM=IOS APP='C:\\Users\\DSGI\\TestMobile\\resources\\apk\\CTAppium_2_0.app' DEVICE='IOS 11' TOKEN='qazwsx' npx codeceptjs run --features --steps --reporter mocha-multi",
+        "tag": "npx codeceptjs run --features --steps --grep"
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^0.8.0",
+        "@codeceptjs/examples": "^1.2.1",
+        "@codeceptjs/ui": "^0.4.6",
+        "codeceptjs": "^3.3.3",
+        "mocha-junit-reporter": "^2.0.2",
+        "playwright": "^1.22.0",
+        "webdriverio": "^6.12.1"
+    },
+    "dependencies": {
+        "appium": "^1.22.3",
+        "codeceptjs-tests": "^0.0.1",
+        "cpf_cnpj": "^0.2.0",
+        "datetime-helper": "^1.0.0",
+        "dotenv": "^16.0.1",
+        "mocha-multi": "^1.1.6",
+        "npm": "^8.11.0",
+        "random-number": "^0.0.9"
+    }
+}
